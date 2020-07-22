@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_teachers"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/teacher_1"
+    android:orientation="vertical"
+    tools:context="com.rafistudio.csefaculty.Department">
+
+    <Button
+        android:id="@+id/cit"
+        android:layout_width="233dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="55dp"
+        android:text="Department of CIT"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/cce"
+        android:layout_width="233dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:text="Department of CCE"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/eee"
+        android:layout_width="233dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:text="Department of EEE"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/mat"
+        android:layout_width="233dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="27dp"
+        android:text="Department of MAT"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/pme"
+        android:layout_width="233dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:text="Department of PME"
+        android:textSize="20sp" />
+</LinearLayout>

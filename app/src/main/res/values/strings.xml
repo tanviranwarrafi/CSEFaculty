@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CSE Faculty</string>
+
+    <string-array name="posts">
+        <item>Professor</item>
+        <item>Associate Professor</item>
+        <item>Assistant Professor</item>
+        <item>Lecturer</item>
+    </string-array>
+
+    <string-array name="facultys">
+        <item>Computer Science and Engineering</item>
+    </string-array>
+
+    <string-array name="departments">
+        <item>Department of Computer Science and Information Technology</item>
+        <item>Department of Computer and Communication Engineering</item>
+        <item>Department of Electricl and Electronics Engineering</item>
+        <item>Department of Physics and Mechanical Engineering</item>
+        <item>Department of Mathematics</item>
+    </string-array>
+
+    <string-array name="batch">
+        <item>01th Batch</item>
+        <item>02nd Batch</item>
+        <item>03rd Batch</item>
+        <item>04th Batch</item>
+        <item>05th Batch</item>
+        <item>06th Batch</item>
+        <item>07th Batch</item>
+        <item>08th Batch</item>
+        <item>09th Batch</item>
+        <item>10th Batch</item>
+        <item>11th Batch</item>
+        <item>12th Batch</item>
+        <item>13th Batch</item>
+        <item>14th Batch</item>
+        <item>15th Batch</item>
+        <item>16th Batch</item>
+        <item>17th Batch</item>
+        <item>18th Batch</item>
+        <item>19th Batch</item>
+        <item>20th Batch</item>
+    </string-array>
+</resources>

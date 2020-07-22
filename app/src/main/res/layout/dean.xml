@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_grey_primary"
+    android:orientation="vertical"
+    tools:context=".Dean">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="সিএসই অনুষদ"
+        android:textColor="#000"
+        android:textSize="33dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="21dp"
+        app:srcCompat="@drawable/jaaaaaaamal_sir" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="Mohammad Jamal Hossain"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Professor"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="Email: "
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/DeansirEmail"
+            android:layout_width="239dp"
+            android:layout_height="wrap_content"
+            android:onClick="deansirEmail"
+            android:text="jamalpstu07@yahoo.com"
+            android:textColor="#303F9F"
+            android:textSize="19sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:text="Contact No: "
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/DeansirContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="callDeansir"
+            android:text="01865102400"
+            android:textColor="#303F9F"
+            android:textSize="20sp" />
+    </LinearLayout>
+</LinearLayout>
