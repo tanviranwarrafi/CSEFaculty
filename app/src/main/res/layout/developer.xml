@@ -5,7 +5,6 @@
     android:id="@+id/activity_developer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_grey_primary"
     android:gravity="center"
     android:orientation="vertical"
     tools:context="com.rafistudio.csefaculty.Developer">

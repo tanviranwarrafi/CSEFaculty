@@ -2,11 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rafistudio.csefaculty">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Dean"/>
@@ -19,8 +23,6 @@
         <activity android:name=".StudentUpdate"/>
         <activity android:name=".TeacherList"/>
         <activity android:name=".TeacherPersonalDetails"/>
-        <activity android:name=".TeacherRegistration"/>
-        <activity android:name=".Test"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

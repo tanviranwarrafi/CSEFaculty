@@ -3,6 +3,7 @@ package com.rafistudio.csefaculty;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -57,70 +61,31 @@ public class MainActivity extends AppCompatActivity {
         teachersCSE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, Department.class);
-                startActivity(i);
+                Intent intent = new Intent(MainActivity.this, Department.class);
+                startActivity(intent);
             }
         });
 
         studentsCSE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, ShowStudents.class);
-                startActivity(i);
+                Intent intent = new Intent(MainActivity.this, ShowStudents.class);
+                startActivity(intent);
             }
         });
 
         developer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, Developer.class);
-                startActivity(i);
+                Intent intent = new Intent(MainActivity.this, Developer.class);
+                startActivity(intent);
             }
         });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (loginUserName.getText().toString().equals("") &&
-                        loginPassword.getText().toString().equals("")) {
-                    //add toast here
-                    Toast.makeText(MainActivity.this, "please enter valid username and password", Toast.LENGTH_SHORT).show();
-                } else {
-
-                    StringRequest stringRequest = new StringRequest(Request.Method.POST, URL.STUDENT_LOGIN,
-                            new Response.Listener<String>() {
-                                @Override
-                                public void onResponse(String response) {
-                                    pd.hide();
-                                    if (response.equals("Success")) {
-                                        Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
-                                        Intent intent = new Intent(MainActivity.this, StudentPersonalDetails.class);
-                                        intent.putExtra("Id_no", loginUserName.getText().toString());
-                                        startActivity(intent);
-                                    }
-                                }
-                            },
-                            new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError error) {
-                                    pd.hide();
-                                    Toast.makeText(MainActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                    ) {
-                        @Override
-                        protected Map<String, String> getParams() throws AuthFailureError {
-                            Map<String, String> params = new HashMap<String, String>();
-                            params.put("Id_no", loginUserName.getText().toString());
-                            params.put("pass", loginPassword.getText().toString());
-                            return params;
-                        }
-                    };
-
-                    RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-                    queue.add(stringRequest);
-                }
+                loginRequest();
             }
         });
 
@@ -133,6 +98,59 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loginRequest() {
+
+        if (loginUserName.getText().toString().equals("") &&
+                loginPassword.getText().toString().equals("")) {
+            Toast.makeText(MainActivity.this, "please enter valid username and password", Toast.LENGTH_SHORT).show();
+        } else {
+
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, URL.STUDENT_LOGIN,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+
+                            try {
+                                pd.hide();
+                                JSONObject jsonObject = new JSONObject(response);
+                                String Response = jsonObject.getString("response");
+                                Log.d("response", "login: " + Response);
+
+                                if (Response.equals("success")){
+                                    Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(MainActivity.this, StudentPersonalDetails.class);
+                                    intent.putExtra("Id_no", loginUserName.getText().toString());
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    Toast.makeText(MainActivity.this, "Invalid id or password", Toast.LENGTH_SHORT).show();
+                                }
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                                Log.d("response", "error: " + e.getMessage());
+                            }
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            pd.hide();
+                            Toast.makeText(MainActivity.this, "Check your internet connection", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+            ) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<String, String>();
+                    params.put("Id_no", loginUserName.getText().toString());
+                    params.put("pass", loginPassword.getText().toString());
+                    return params;
+                }
+            };
+
+            RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
+            queue.add(stringRequest);
+        }
 
     }
 }

@@ -46,7 +46,6 @@ public class StudentAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.student_list_item_layout, null);
         }
-
         StudentUnit su = studentUnits.get(position);
         TextView name = convertView.findViewById(R.id.tvName);
         name.setText(su.getName());

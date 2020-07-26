@@ -52,7 +52,7 @@ public class StudentUpdate extends AppCompatActivity {
                 email = email_up.getText().toString();
 
                 RequestQueue requestQueue = Volley.newRequestQueue(StudentUpdate.this);
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, URL.STUDENT_UPDATE,
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, URL.UPDATE_STUDENT,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {

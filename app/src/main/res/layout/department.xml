@@ -15,7 +15,10 @@
         android:layout_marginLeft="45dp"
         android:layout_marginTop="55dp"
         android:text="Department of CIT"
-        android:textSize="20sp" />
+        android:background="@color/google_red"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/cce"
@@ -24,7 +27,10 @@
         android:layout_marginLeft="45dp"
         android:layout_marginTop="20dp"
         android:text="Department of CCE"
-        android:textSize="20sp" />
+        android:background="@color/google_blue"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/eee"
@@ -33,7 +39,10 @@
         android:layout_marginLeft="45dp"
         android:layout_marginTop="20dp"
         android:text="Department of EEE"
-        android:textSize="20sp" />
+        android:background="@color/google_green"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/mat"
@@ -42,7 +51,10 @@
         android:layout_marginLeft="45dp"
         android:layout_marginTop="27dp"
         android:text="Department of MAT"
-        android:textSize="20sp" />
+        android:background="@color/google_yellow"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/pme"
@@ -51,5 +63,8 @@
         android:layout_marginLeft="45dp"
         android:layout_marginTop="20dp"
         android:text="Department of PME"
-        android:textSize="20sp" />
+        android:background="@color/teal_primary_dark"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textAllCaps="false" />
 </LinearLayout>
